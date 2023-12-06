@@ -1,13 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html" data-bs-theme="dark">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>JBaltz.dev</title>
+        <title>JBaltz.dev | Josef Baltz</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.2/font/bootstrap-icons.min.css" integrity="sha512-D1liES3uvDpPrgk7vXR/hR/sukGn7EtDWEyvpdLsyalQYq6v6YUsTUJmku7B4rcuQ21rf0UTksw2i/2Pdjbd3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
-        <h1>JBaltz.dev</h1>
+        <div class="container">
+            <header class="d-flex flex-wrap justify-content-between py-3 mb-4 border-bottom">
+                <span class="my-auto mb-3 mb-md-0 fs-2">Josef Baltz</span>
+                <div class="my-auto form-check form-switch justify-content-end">
+                    <input class="form-check-input" type="checkbox" role="switch" id="darkModeSwitch" onclick="toggleTheme()">
+                    <label class="form-check-label bi-sun" for="darkModeSwitch"></label>
+                </div>
+            </header>
+        </div>
+
+        <div class="text-secondary px-4 py-5 text-center">
+            <h1 class="px-4 py-2 display-5 fw-bold text-body"><span id="animated"></span></h1>
+        </div>
+        
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <div class="col-md-4 d-flex align-tiems-center">
+                    <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2023 Josef Baltz</span>
+                </div>
+                <div class="nav justify-content-end col-md-2 d-flex btn-group" role="group">
+                    <a type="button" class="btn btn-outline-secondary bi-linkedin" href="https://linkedin.com/in/josefbaltz"></a>
+                    <a type="button" class="btn btn-outline-secondary bi-github" href="https://github.com/josefbaltz"></a>
+                </div>
+            </footer>
+        </div>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            var typed = new Typed('#animated', {
+                strings: ['Software Aficionado', 'Entrepreneur', "Self-Starter", "Leader"],
+                typeSpeed: 75,
+                backSpeed: 50,
+                startDelay: 500,
+                loop: true,
+                cursorChar: '_'
+            });
+            function toggleTheme() {
+                var themeSwitch = document.getElementById("darkModeSwitch");
+                var htmlTag = document.getElementById("html");
+
+                if (themeSwitch.checked == true) {
+                    htmlTag.setAttribute("data-bs-theme", "light");
+                } else {
+                    htmlTag.setAttribute("data-bs-theme", "dark");
+                }
+            }
+        </script>
     </body>
 </html>
